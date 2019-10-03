@@ -10,6 +10,14 @@ Create an array of strings called `colors` that contain "orange", "red", "yellow
 
 Then, using array subscripting and string interpolation, print out the String `"orange, yellow, and lavender are some of my favorite colors"`.
 
+# Answer
+```swift
+var colors = [String]()
+
+colors = ["orange" , "red" , "yellow" , "turquoise" , "lavender"]
+print("\(colors[0]), \(colors[1]), \(colors[2]), \(colors[3]), and \(colors[4]) are some of my favorite colors")
+```
+
 
 ## Question 2
 
@@ -17,6 +25,15 @@ Remove "Illinois" and "Kansas" from the array below.
 
 `var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]`
 
+# Answer
+```swift
+var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
+
+westernStates.remove(at: westernStates.count - 1)
+westernStates.remove(at: westernStates.count - 1)
+
+print(westernStates)
+```
 
 ## Question 3
 
@@ -24,17 +41,52 @@ Iterate through the array below. For each state, print out the name of the state
 
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
 
+# Answer
+```swift
+let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
+
+for (_, state) in moreStates.enumerated() {
+    if state == "Hawaii" || state == "Alaska" {
+        print("\(state) is not in the continental U.S.")
+    } else {
+        print("\(state) is in the continental U.S.")
+    }
+}
+```
 
 ## Question 4
 
 Print out how many non-whitespace characters are in `myString`:
 
 `let myString = "This is good practice with Strings!"`
+# Answer
+```swift
+let myString = "This is good practice with Strings!"
+let blank: Character = " "
+for (_, space) in myString.enumerated() {
+    if space == blank {
+        print(space)
+    }
+}
+```
 
 Iterate through the array below. For each sentence, print out how many non-whitespace characters are in it.
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
+# Answer
+```swift
+let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
+let blank: Character = " "
+
+for (_, quote) in myFavoriteQuotes.enumerated() {
+    for (_, space) in quote.enumerated() {
+        if space == blank {
+            print(blank)
+        }
+    }
+}
+```
 
 ## Question 5
 
@@ -43,6 +95,21 @@ Iterate through `garden` and place any 🌷 that you find into the `basket`. Rep
 ```swift
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
+```
+# Answer
+```swift
+var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
+var basket = [String]()
+
+for (flower, str) in garden.enumerated() {
+    if str == "🌷" {
+        basket.append(str)
+        garden[flower] = "dirt"
+
+    }
+}
+print(garden)
+print(basket)
 ```
 
 ## Question 6
