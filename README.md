@@ -123,7 +123,24 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 
 `var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]`
 
+# Answer
+```swift
+var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]
 
+battingLineup.append("Suzuki")
+for (lineup, batter) in battingLineup.enumerated() {
+    if batter == "Jeter" {
+        battingLineup[lineup] = "Tejada"
+    } else if batter == "Thomas" {
+        battingLineup[lineup] = "Guerrero"
+    } else if lineup == 7 {
+        battingLineup[lineup] = "Reyes"
+    } else if lineup == 0 {
+        battingLineup[lineup] = "Jones"
+    }
+}
+print(battingLineup)
+```
 ## Question 7
 
 Given an array of Ints, find out if it contains a target number.  
